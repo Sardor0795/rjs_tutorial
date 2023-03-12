@@ -12,6 +12,9 @@ export const Container = styled("div")`
   align-items: center;
   list-style-type: none;
   justify-content: center;
+  .active {
+    color: red;
+  }
 `;
 
 export const NavBar = styled("div")`
