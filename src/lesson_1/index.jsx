@@ -20,4 +20,7 @@
     import './'
     import Smth, { Smth } from './
 
+    Our all works in src file
+    Git ignore file - ignores files which shouldn't upload
+
 */
