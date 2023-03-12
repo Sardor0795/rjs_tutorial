@@ -4,6 +4,7 @@
     pacage.json, src, public
     spa -> single page application
     React Virtual DOM - uses diffing algorithm
+    Component
 
     JSX -> JavaScript XML - syntax sugar of create element
     Browser dont reat it, Babel.js converts it browser readable file
