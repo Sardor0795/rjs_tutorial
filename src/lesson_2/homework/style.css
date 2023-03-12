@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.cardWrapper {
+  background-color: rgb(222, 186, 57);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 750px;
+  padding: 20px;
+}
+
+.card.fruit {
+  width: 100px;
+  height: 150px;
+  background-color: rgb(236, 77, 77);
+  margin: 15px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.text.text {
+  margin-top: 10px;
+  color: #fff;
+}
