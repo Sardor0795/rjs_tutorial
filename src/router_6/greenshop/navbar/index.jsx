@@ -1,13 +1,19 @@
 import React from "react";
 import { Item, Navbar } from "./style";
 
+const data = [
+  { path: "/home", title: "Home" },
+  { path: "/shop", title: "Shop" },
+  { path: "/plant", title: "Plant Care" },
+  { path: "/blogs", title: "Blogs" },
+];
+
 export const NavBar = () => {
-  return <Navbar>
-
-        <Item to={'/home'}>Home</Item>
-        <Item to={'/shop'}>Shop</Item>
-        <Item to={'/plant'}>Plant Care</Item>
-        <Item to={'/blogs'}>Blogs</Item>
-
-  </Navbar>;
+  return (
+    <Navbar>
+      {data.map((v) => {
+        return <Item to={v.path}>{v.title}</Item>;
+      })}
+    </Navbar>
+  );
 };
