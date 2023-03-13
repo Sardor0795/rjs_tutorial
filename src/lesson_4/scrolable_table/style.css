@@ -35,6 +35,7 @@
 
 table {
   border-collapse: collapse;
+  cursor: pointer;
 }
 
 thead {
@@ -58,6 +59,10 @@ td {
   background-color: #4b7067ff;
   color: #fff;
   font-size: 14px;
+}
+
+tr:hover td {
+  background-color: #6ba385ff;
 }
 
 tr td:first-child {
