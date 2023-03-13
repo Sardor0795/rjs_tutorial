@@ -4,7 +4,15 @@ import Table from "./scrolable_table";
 class LessonFour extends Component {
   render() {
     return (
-      <div>
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "#866027",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Table />
       </div>
     );

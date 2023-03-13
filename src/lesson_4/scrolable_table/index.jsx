@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 
 class Table extends Component {
   render() {
@@ -18,6 +19,107 @@ class Table extends Component {
               <th>Edit</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+            <tr>
+              <td>Id</td>
+              <td>Name</td>
+              <td>Age</td>
+              <td>Address</td>
+              <td>Status</td>
+              <td>Nickname</td>
+              <td>Univ</td>
+              <td>Job</td>
+              <td>Edit</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );
