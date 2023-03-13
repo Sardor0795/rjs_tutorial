@@ -13,6 +13,28 @@
   font-size: 15px;
 }
 
+.tableWrapper.scroll-close::-webkit-scrollbar {
+  width: 0;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* Mostly for vertical scrollbars */
+  border-radius: 25px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: #323acb;
+  border-radius: 25px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  /* Background */
+  background: rgba(225, 220, 220, 0.845);
+  border-radius: 25px;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -20,7 +42,7 @@ table {
 thead {
   position: sticky;
   top: 0;
-  background-color: rgb(164, 160, 160);
+  background-color: rgb(194, 188, 188);
   z-index: 2;
 }
 
@@ -39,7 +61,7 @@ td {
 tr td:first-child {
   position: sticky;
   left: 0;
-  background-color: #fff;
+  background-color: rgb(227, 94, 94);
 }
 
 tr td:last-child {
@@ -53,13 +75,13 @@ tr th:first-child {
   top: 0;
   left: 0;
   z-index: 4;
-  background-color: rgb(164, 160, 160);
+  background-color: rgb(194, 188, 188);
 }
 
 tr th:last-child {
   position: sticky;
   top: 0;
   right: 0;
-  background-color: rgb(164, 160, 160);
+  background-color: rgb(194, 188, 188);
   z-index: 2;
 }
