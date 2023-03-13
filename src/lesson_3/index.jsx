@@ -8,6 +8,7 @@ class State extends Component {
       title: "Web Brain",
       name: "",
       select: "",
+      checked: "",
     };
   }
   render() {
@@ -35,17 +36,23 @@ class State extends Component {
     const onSelect = (e) => {
       this.setState({ select: e.target.value });
     };
+    const onChecked = (e) => {
+      this.setState({ checked: `${e.target.checked}` });
+      //   console.log(this.state.checked);
+    };
     return (
       <div>
         <h1>{this.state.title}</h1>
         <h1>Name: {this.state.name}</h1>
         <h1>State {this.state.count}</h1>
         <h1>Selected: {this.state.select}</h1>
+        <h1>Checked {this.state.checked}</h1>
         <input onChange={onChange} type="text" placeholder="name" />
         <select onChange={onSelect}>
           <option value="Name">Name</option>
           <option value="Surname">Surname</option>
         </select>
+        <input onChange={onChecked} type="checkbox" />
         <button onClick={plus}>+</button>
         <button onClick={minus}>-</button>
       </div>
