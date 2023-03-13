@@ -7,6 +7,7 @@ const students = [
   { id: 3, name: "Ann" },
   { id: 4, name: "Lean" },
   { id: 5, name: "Jill" },
+  { id: 6, name: "Dale" },
 ];
 
 class Main extends Component {
