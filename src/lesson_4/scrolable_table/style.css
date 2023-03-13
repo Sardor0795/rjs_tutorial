@@ -10,7 +10,6 @@
   background-color: #fff;
   overflow: scroll;
   position: relative;
-  font-size: 15px;
 }
 
 .tableWrapper.scroll-close::-webkit-scrollbar {
@@ -57,18 +56,26 @@ td {
   height: 50px;
   text-align: center;
   background-color: #4b7067ff;
+  color: #fff;
+  font-size: 14px;
 }
 
 tr td:first-child {
   position: sticky;
   left: 0;
-  background-color: rgb(227, 94, 94);
+  background-color: #c76362ff;
+  font-weight: bold;
+  color: #000;
+  font-size: 15px;
 }
 
 tr td:last-child {
   position: sticky;
   right: 0;
-  background-color: rgb(227, 94, 94);
+  background-color: #c76362ff;
+  font-weight: bold;
+  color: #000;
+  font-size: 15px;
 }
 
 tr th:first-child {
