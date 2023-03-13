@@ -11,6 +11,7 @@ class LessonFour extends Component {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          padding: "50px",
         }}
       >
         <Table />
