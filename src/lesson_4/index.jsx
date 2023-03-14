@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { students } from "../mock/students.jsx";
 // import Table from "./scrolable_table";
 
 class LessonFour extends Component {
@@ -7,6 +8,7 @@ class LessonFour extends Component {
     this.state = {
       name: "Name",
       surname: "Surname",
+      data: students,
     };
   }
   render() {
@@ -42,6 +44,13 @@ class LessonFour extends Component {
           type="text"
           placeholder="Surname"
         />
+        {this.state.data.map((v) => {
+          return (
+            <h1>
+              Id: {v.id} Name: {v.name} Surname: {v.surname}
+            </h1>
+          );
+        })}
       </div>
     );
   }
