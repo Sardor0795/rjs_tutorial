@@ -46,12 +46,20 @@ class LessonFive extends Component {
       isActive
     ) => {
       if (isActive) {
-        this.setState({ active: null });
+        let res = this.state.data.map((v) => {
+          return v.id === this.state.active.id ? this.state.active : v;
+        });
+        this.setState({ data: res, active: null });
       } else {
         this.setState({
           active: { id, name, age, address, status, nickname, univ, job },
         });
       }
+    };
+    const onActiveChange = (e) => {
+      this.setState({
+        active: { ...this.state.active, [e.target.name]: e.target.value },
+      });
     };
     return (
       <div
@@ -108,14 +116,91 @@ class LessonFive extends Component {
                   ({ id, name, age, address, status, nickname, univ, job }) => {
                     return (
                       <tr key={id}>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : id}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : name}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : age}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : address}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : status}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : nickname}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : univ}</td>
-                        <td>{this.state.active?.id === id ? <input type="text" /> : job}</td>
+                        <td>{id}</td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="name"
+                              onChange={onActiveChange}
+                              value={this.state.active.name}
+                              type="text"
+                            />
+                          ) : (
+                            name
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="age"
+                              onChange={onActiveChange}
+                              value={this.state.active.age}
+                              type="text"
+                            />
+                          ) : (
+                            age
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="address"
+                              onChange={onActiveChange}
+                              value={this.state.active.address}
+                              type="text"
+                            />
+                          ) : (
+                            address
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="status"
+                              onChange={onActiveChange}
+                              value={this.state.active.status}
+                              type="text"
+                            />
+                          ) : (
+                            status
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="nickname"
+                              onChange={onActiveChange}
+                              value={this.state.active.nickname}
+                              type="text"
+                            />
+                          ) : (
+                            nickname
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="univ"
+                              onChange={onActiveChange}
+                              value={this.state.active.univ}
+                              type="text"
+                            />
+                          ) : (
+                            univ
+                          )}
+                        </td>
+                        <td>
+                          {this.state.active?.id === id ? (
+                            <input
+                              name="job"
+                              onChange={onActiveChange}
+                              value={this.state.active.job}
+                              type="text"
+                            />
+                          ) : (
+                            job
+                          )}
+                        </td>
                         <td>
                           <button
                             onClick={() =>
