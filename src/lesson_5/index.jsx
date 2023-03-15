@@ -1,28 +1,15 @@
 import React, { Component } from "react";
+import "./style.css";
 import { students } from "../mock/students.jsx";
-import Table from "./scrolable_table";
 
 class LessonFive extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Name",
-      surname: "Surname",
       data: students,
     };
   }
   render() {
-    const onChange = (e) => {
-      this.setState({ [e.target.name]: e.target.value });
-      console.log(e.target.value);
-      console.log(e.target.name);
-    };
-    const onFilter = (e) => {
-      let fltrd = students.filter((v) =>
-        v.name.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-      this.setState({ data: fltrd });
-    };
     return (
       <div
         style={{
@@ -35,7 +22,45 @@ class LessonFive extends Component {
           padding: "50px",
         }}
       >
-        <Table />
+        <div className="tableWrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Nickname</th>
+                <th>Univ</th>
+                <th>Job</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                this.state.data.map((v) => {
+                  return (
+
+                    <tr>
+                    <td>{v.id}</td>
+                    <td>{v.name}</td>
+                    <td>{v.age}</td>
+                    <td>{v.address}</td>
+                    <td>{v.status}</td>
+                    <td>{v.nickname}</td>
+                    <td>{v.univ}</td>
+                    <td>{v.job}</td>
+                    <td><button>Edit</button></td>
+                  </tr>
+
+                  )
+                })
+              }
+
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
