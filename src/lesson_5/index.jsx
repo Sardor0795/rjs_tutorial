@@ -6,12 +6,28 @@ class LessonFive extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
+      surname: "",
       data: students,
     };
   }
   render() {
     const onDelete = (id) => {
       let res = this.state.data.filter((v) => v.id !== id);
+      this.setState({ data: res });
+    };
+    const onChange = (e) => {
+      this.setState({ [e.target.name]: e.target.value });
+    };
+    const onAdd = () => {
+      let res = [
+        ...this.state.data,
+        {
+          id: performance.now(),
+          name: this.state.name,
+          nickname: this.state.surname,
+        },
+      ];
       this.setState({ data: res });
     };
     return (
@@ -26,6 +42,14 @@ class LessonFive extends Component {
           padding: "50px",
         }}
       >
+        <input onChange={onChange} name="name" type="text" placeholder="Name" />
+        <input
+          onChange={onChange}
+          name="surname"
+          type="text"
+          placeholder="Nickname"
+        />
+        <button onClick={onAdd}>Add</button>
         <div className="tableWrapper">
           <table>
             <thead>
