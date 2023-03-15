@@ -31,7 +31,7 @@ class LessonFive extends Component {
     };
     const onFilter = (e) => {
       let res = students.filter((v) =>
-        v[this.state.select]
+        `${v[this.state.select]}`
           .toLowerCase()
           .includes(e.target.value.toLowerCase())
       );
@@ -72,6 +72,7 @@ class LessonFive extends Component {
           <option value="name">name</option>
           <option value="nickname">nickname</option>
           <option value="status">status</option>
+          <option value="id">id</option>
         </select>
         <div className="tableWrapper">
           <table>
