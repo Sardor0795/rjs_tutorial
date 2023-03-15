@@ -20,14 +20,18 @@ class LessonFive extends Component {
       this.setState({ [e.target.name]: e.target.value });
     };
     const onAdd = () => {
-      let res = [
-        ...this.state.data,
-        {
-          id: parseInt(performance.now()),
-          name: this.state.name,
-          nickname: this.state.nickname,
-        },
-      ];
+      let user = {
+        id: parseInt(performance.now()),
+        name: this.state.name,
+        nickname: this.state.nickname,
+      };
+      let res = [...this.state.data, user];
+      this.setState({ name: "", nickname: "", data: res });
+    };
+    const onFilter = (e) => {
+      let res = students.filter((v) =>
+        v.name.toLowerCase().includes(e.target.value.toLowerCase())
+      );
       this.setState({ data: res });
     };
     return (
@@ -42,13 +46,21 @@ class LessonFive extends Component {
           padding: "50px",
         }}
       >
-        <input onChange={onChange} name="name" type="text" placeholder="Name" />
         <input
+          value={this.state.name}
+          onChange={onChange}
+          name="name"
+          type="text"
+          placeholder="Name"
+        />
+        <input
+          value={this.state.nickname}
           onChange={onChange}
           name="nickname"
           type="text"
           placeholder="Nickname"
         />
+        <input type="text" placeholder="Filter" onChange={onFilter} />
         <button onClick={onAdd}>Add</button>
         <div className="tableWrapper">
           <table>
