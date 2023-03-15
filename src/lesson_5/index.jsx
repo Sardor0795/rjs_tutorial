@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { students } from "../mock/students.jsx";
-// import Table from "./scrolable_table";
+import Table from "./scrolable_table";
 
-class LessonFour extends Component {
+class LessonFive extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,8 +18,10 @@ class LessonFour extends Component {
       console.log(e.target.name);
     };
     const onFilter = (e) => {
-      let fltrd = students.filter((v) => v.name.toLowerCase().includes(e.target.value.toLowerCase()));
-      this.setState({data: fltrd})
+      let fltrd = students.filter((v) =>
+        v.name.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      this.setState({ data: fltrd });
     };
     return (
       <div
@@ -33,33 +35,10 @@ class LessonFour extends Component {
           padding: "50px",
         }}
       >
-        {/* <Table /> */}
-        <h1>Name: {this.state.name}</h1>
-        <h1>Surname: {this.state.surname}</h1>
-        <input
-          name="name"
-          onChange={(e) => onChange(e)}
-          type="text"
-          placeholder="name"
-        />
-        <input
-          name="surname"
-          onChange={(e) => onChange(e)}
-          type="text"
-          placeholder="Surname"
-        />
-        <hr style={{ widows: "100%" }} />
-        <input onChange={onFilter} type="text" placeholder="Filter" />
-        {this.state.data.map((v) => {
-          return (
-            <h1 key={v.id}>
-              Id: {v.id} Name: {v.name} Surname: {v.surname}
-            </h1>
-          );
-        })}
+        <Table />
       </div>
     );
   }
 }
 
-export default LessonFour;
+export default LessonFive;
