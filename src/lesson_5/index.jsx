@@ -7,7 +7,7 @@ class LessonFive extends Component {
     super(props);
     this.state = {
       name: "",
-      surname: "",
+      nickname: "",
       data: students,
     };
   }
@@ -23,9 +23,9 @@ class LessonFive extends Component {
       let res = [
         ...this.state.data,
         {
-          id: performance.now(),
+          id: parseInt(performance.now()),
           name: this.state.name,
-          nickname: this.state.surname,
+          nickname: this.state.nickname,
         },
       ];
       this.setState({ data: res });
@@ -45,7 +45,7 @@ class LessonFive extends Component {
         <input onChange={onChange} name="name" type="text" placeholder="Name" />
         <input
           onChange={onChange}
-          name="surname"
+          name="nickname"
           type="text"
           placeholder="Nickname"
         />
