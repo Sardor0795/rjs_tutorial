@@ -10,6 +10,10 @@ class LessonFive extends Component {
     };
   }
   render() {
+    const onDelete = (id) => {
+      let res = this.state.data.filter((v) => v.id !== id);
+      this.setState({ data: res });
+    };
     return (
       <div
         style={{
@@ -38,25 +42,33 @@ class LessonFive extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.data.map(
-                ({ id, name, age, address, status, nickname, univ, job }) => {
-                  return (
-                    <tr key={id}>
-                      <td>{id}</td>
-                      <td>{name}</td>
-                      <td>{age}</td>
-                      <td>{address}</td>
-                      <td>{status}</td>
-                      <td>{nickname}</td>
-                      <td>{univ}</td>
-                      <td>{job}</td>
-                      <td>
-                        <button className="btn">Edit</button>
-                        <button className="btn">Dell</button>
-                      </td>
-                    </tr>
-                  );
-                }
+              {this.state.data.length ? (
+                this.state.data.map(
+                  ({ id, name, age, address, status, nickname, univ, job }) => {
+                    return (
+                      <tr key={id}>
+                        <td>{id}</td>
+                        <td>{name}</td>
+                        <td>{age}</td>
+                        <td>{address}</td>
+                        <td>{status}</td>
+                        <td>{nickname}</td>
+                        <td>{univ}</td>
+                        <td>{job}</td>
+                        <td>
+                          <button className="btn">Edit</button>
+                          <button onClick={() => onDelete(id)} className="btn">
+                            Dell
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  }
+                )
+              ) : (
+                <tr>
+                  <h1>No Data</h1>
+                </tr>
               )}
             </tbody>
           </table>
