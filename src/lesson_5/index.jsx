@@ -9,6 +9,7 @@ class LessonFive extends Component {
       name: "",
       nickname: "",
       data: students,
+      select: "name",
     };
   }
   render() {
@@ -30,9 +31,14 @@ class LessonFive extends Component {
     };
     const onFilter = (e) => {
       let res = students.filter((v) =>
-        v.name.toLowerCase().includes(e.target.value.toLowerCase())
+        v[this.state.select]
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
       );
       this.setState({ data: res });
+    };
+    const onSelect = (e) => {
+      this.setState({ select: e.target.value });
     };
     return (
       <div
@@ -62,6 +68,11 @@ class LessonFive extends Component {
         />
         <input type="text" placeholder="Filter" onChange={onFilter} />
         <button onClick={onAdd}>Add</button>
+        <select onChange={onSelect}>
+          <option value="name">name</option>
+          <option value="nickname">nickname</option>
+          <option value="status">status</option>
+        </select>
         <div className="tableWrapper">
           <table>
             <thead>
@@ -103,7 +114,7 @@ class LessonFive extends Component {
                 )
               ) : (
                 <tr>
-                  <h1>No Data</h1>
+                  <td>No Data</td>
                 </tr>
               )}
             </tbody>
