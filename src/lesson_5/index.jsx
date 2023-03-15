@@ -38,11 +38,9 @@ class LessonFive extends Component {
               </tr>
             </thead>
             <tbody>
-              {
-                this.state.data.map((v) => {
-                  return (
-
-                    <tr>
+              {this.state.data.map((v) => {
+                return (
+                  <tr>
                     <td>{v.id}</td>
                     <td>{v.name}</td>
                     <td>{v.age}</td>
@@ -51,13 +49,13 @@ class LessonFive extends Component {
                     <td>{v.nickname}</td>
                     <td>{v.univ}</td>
                     <td>{v.job}</td>
-                    <td><button>Edit</button></td>
+                    <td>
+                      <button className="btn">Edit</button>
+                      <button className="btn">Dell</button>
+                    </td>
                   </tr>
-
-                  )
-                })
-              }
-
+                );
+              })}
             </tbody>
           </table>
         </div>

@@ -98,3 +98,11 @@ tr th:last-child {
   background-color: #9ac853ff;
   z-index: 2;
 }
+
+.btn {
+  padding: 5px;
+  background-color: #4c53cd;
+  color: #fff;
+  cursor: pointer;
+  margin: 2px;
+}
