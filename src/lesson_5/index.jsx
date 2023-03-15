@@ -10,6 +10,7 @@ class LessonFive extends Component {
       nickname: "",
       data: students,
       select: "name",
+      active: {},
     };
   }
   render() {
@@ -39,6 +40,18 @@ class LessonFive extends Component {
     };
     const onSelect = (e) => {
       this.setState({ select: e.target.value });
+    };
+    const onEdit = (
+      { id, name, age, address, status, nickname, univ, job },
+      isActive
+    ) => {
+      if (isActive) {
+        this.setState({ active: null });
+      } else {
+        this.setState({
+          active: { id, name, age, address, status, nickname, univ, job },
+        });
+      }
     };
     return (
       <div
@@ -95,16 +108,35 @@ class LessonFive extends Component {
                   ({ id, name, age, address, status, nickname, univ, job }) => {
                     return (
                       <tr key={id}>
-                        <td>{id}</td>
-                        <td>{name}</td>
-                        <td>{age}</td>
-                        <td>{address}</td>
-                        <td>{status}</td>
-                        <td>{nickname}</td>
-                        <td>{univ}</td>
-                        <td>{job}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : id}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : name}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : age}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : address}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : status}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : nickname}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : univ}</td>
+                        <td>{this.state.active?.id === id ? <input type="text" /> : job}</td>
                         <td>
-                          <button className="btn">Edit</button>
+                          <button
+                            onClick={() =>
+                              onEdit(
+                                {
+                                  id,
+                                  name,
+                                  age,
+                                  address,
+                                  status,
+                                  nickname,
+                                  univ,
+                                  job,
+                                },
+                                this.state.active?.id === id
+                              )
+                            }
+                            className="btn"
+                          >
+                            {this.state.active?.id === id ? "save" : "edit"}
+                          </button>
                           <button onClick={() => onDelete(id)} className="btn">
                             Dell
                           </button>
