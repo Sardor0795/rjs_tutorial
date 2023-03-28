@@ -13,6 +13,7 @@ class LessonFive extends Component {
       active: {},
     };
   }
+  
   render() {
     const onDelete = (id) => {
       let res = this.state.data.filter((v) => v.id !== id);
