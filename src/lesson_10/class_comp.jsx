@@ -9,9 +9,18 @@ export default class ClassComp extends Component {
   }
 
   render() {
+    // const plus = () => {
+    //   this.setState(
+    //     () => ({ count: this.state.count + 1 }),
+    //     () => {
+    //       console.log(this.state.count);
+    //     }
+    //   );
+    //   // console.log(this.state.count);
+    // };
     const plus = () => {
       this.setState(
-        () => ({ count: this.state.count + 1 }),
+        (state) => ({ count: state.count + 1 }),
         () => {
           console.log(this.state.count);
         }
