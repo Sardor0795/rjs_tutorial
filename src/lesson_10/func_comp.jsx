@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Task } from "./taks";
 
 export const FuncComp = () => {
   //   const state = useState(20);
@@ -43,6 +44,7 @@ export const FuncComp = () => {
         value={data.title}
         onChange={({ target: { value } }) => setData({ ...data, title: value })}
       />
+      <Task />
     </div>
   );
 };
