@@ -2,16 +2,21 @@ import React, { Component } from "react";
 import PageOne from "./pageOne";
 import PageTwo from "./pageTwo";
 import "./style.css";
+import { students } from "../mock/students";
 
 export default class LessonEight extends Component {
   state = {
     list: ["home", "about", "socials", "back"],
     active: "home",
     page: true,
+    data: students,
   };
   render() {
     const setPage = (v) => {
       this.setState({ page: v });
+    };
+    const Delete = (id) => {
+      this.setState({ data: this.state.data.filter((v) => v.id !== id) });
     };
     return (
       <>
@@ -32,6 +37,14 @@ export default class LessonEight extends Component {
           ) : (
             <PageTwo func={setPage} />
           )}
+        </div>
+        <div>
+          {this.state.data.map((v, i) => (
+            <h1 key={v.id}>
+              {v.id} {v.name}{" "}
+              <button onClick={() => Delete(v.id)}>delete</button>
+            </h1>
+          ))}
         </div>
       </>
     );
