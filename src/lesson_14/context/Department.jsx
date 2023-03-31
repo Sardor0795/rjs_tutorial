@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { createContext } from "react";
 
-export const DepartmentContext = createContext();
+const DepartmentContext = createContext();
 export const DepartmentCon = () => useContext(DepartmentContext);
 
 export const Department = ({ children }) => {

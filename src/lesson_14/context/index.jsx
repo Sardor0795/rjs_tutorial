@@ -7,11 +7,11 @@ import { Cars } from "./Cars";
 export const Context = ({ children }) => {
   return (
     <Department>
-      <Trucks>
-        <Cars>
+      <Cars>
+        <Trucks>
           <Students>{children}</Students>
-        </Cars>
-      </Trucks>
+        </Trucks>
+      </Cars>
     </Department>
   );
 };
