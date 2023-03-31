@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { StudentContext } from "./context";
+import { ModeContext } from "./modeContext";
 
 export const Body = () => {
   const [st, setSt] = useContext(StudentContext);
@@ -10,8 +11,15 @@ export const Body = () => {
     setSt(res);
   };
 
+  const [dark] = useContext(ModeContext);
+
   return (
-    <div style={{ backgroundColor: "coral" }}>
+    <div
+      style={{
+        backgroundColor: dark ? "#000" : "coral",
+        color: dark ? "#fff" : "#000",
+      }}
+    >
       <h1>Students: {st.length}</h1>
       {st.map((v) => (
         <h1 key={v.id}>
