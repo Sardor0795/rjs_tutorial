@@ -8,6 +8,15 @@ export const Navbar = () => {
 
   const [dark, setDark] = useContext(ModeContext);
 
+  const setToggleLight = () => {
+    localStorage.setItem("dark", "false");
+    setDark(false);
+  };
+  const setToggleDark = () => {
+    localStorage.setItem("dark", "true");
+    setDark(true);
+  };
+
   return (
     <div
       style={{
@@ -22,8 +31,8 @@ export const Navbar = () => {
       <h1>menu</h1>
       <h1>search</h1>
       <h1>find</h1>
-      <button onClick={() => setDark(true)}>dark</button>
-      <button onClick={() => setDark(false)}> light</button>
+      <button onClick={setToggleDark}>dark</button>
+      <button onClick={setToggleLight}> light</button>
     </div>
   );
 };
