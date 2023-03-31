@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { StudentContext } from "./context";
 
-export const Navbar = ({data}) => {
+export const Navbar = () => {
+  const [data] = useContext(StudentContext);
+
   return (
     <div
       style={{
