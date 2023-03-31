@@ -17,7 +17,7 @@ export const LessonTwelve = () => {
   };
 
   const [counter, dispach] = useReducer(reducer, 0);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   return (
     <div>
@@ -31,7 +31,7 @@ export const LessonTwelve = () => {
         70
       </button>
       <button onClick={() => dispach({ type: "byAmount", payLoad: +amount })}>
-        selected
+        {amount}
       </button>
       <select onChange={(e) => setAmount(e.target.value)}>
         <option value="1">1</option>
